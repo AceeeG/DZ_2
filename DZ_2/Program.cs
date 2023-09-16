@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics.Eventing.Reader;
-using System.Runtime.InteropServices;
 
 namespace Lab1
 {
@@ -54,27 +52,38 @@ namespace Lab1
             }
 
             Console.WriteLine("Задание 3.\nВведите строчный символ английского алфавита, а программа выведет следующий\n");
-            char[] symbol = new[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
-            for(byte i = 0; i < symbol.Length; i++)
-            {
-                string sym = Console.ReadLine();
-                a = (char)sym[0];
+            char[] alf = new[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
-                if (a == symbol[i])
+            string sym = Console.ReadLine();
+            a = (char)sym[0];
+            char z = 'z';
+            if (a == z)
+            {
+                Console.WriteLine("Следующий символ: a\n");
+            }
+            for(int i = 0; i < alf.Length; i++)
+            {
+                if (a == (alf[i]) && (a != (alf[alf.Length - 1])))
                 {
-                    Console.WriteLine($"Следующая буква: {symbol[i + 1]}");
+                    Console.WriteLine($"Следующий символ: {alf[i + 1]}\n");
                 }
-                else if(a == symbol[symbol.Length - 1])
+
+            }
+            for (int j = 0; j < alf.Length; j++)
+            {
+                if (a != (alf[j]))
                 {
-                    Console.WriteLine("Следующая буква: a");
+                    Console.WriteLine("Вы ввели не строчную букву английского алфавита");
                     break;
                 }
-                else
-                {
-                        Console.WriteLine("Вы ввели не строчный символ английского алфавита\n");
-                        break;
-                }
             }
+
+
+
+
+
+
+
 
             Console.WriteLine("Задание 4\nНайти корни квадратного уравнения\nВведите первый коэфицент:");
             double first = Convert.ToDouble(Console.ReadLine());
