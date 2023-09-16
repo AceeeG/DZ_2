@@ -52,7 +52,7 @@ namespace Lab2
             client.balance = 3200;
             client.Print();
 
-            Console.WriteLine("Задание 3\nИспользуем enum как тип данных в структуре\n");
+            Console.WriteLine("Задание 3\nИспользуем enum как тип данн\n");
             Worker worker = new Worker();
             worker.name = "Олег";
             worker.vuz = 0;
