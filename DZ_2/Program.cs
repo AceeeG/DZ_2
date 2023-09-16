@@ -6,7 +6,7 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Задание 1.\nВведите ваше имя:");
+            Console.WriteLine("Лабораторная 1\nЗадание 1.\nВведите ваше имя:");
 
             string name = Console.ReadLine();
             Console.WriteLine($"\nПривет {name}, хорошего дня тебе\n");
@@ -79,12 +79,6 @@ namespace Lab1
             }
 
 
-
-
-
-
-
-
             Console.WriteLine("Задание 4\nНайти корни квадратного уравнения\nВведите первый коэфицент:");
             double first = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите второй коэфицент:");
@@ -104,6 +98,7 @@ namespace Lab1
             {
                 Console.WriteLine("Нет вещественных корней");
             }
+            
             Console.ReadKey();
         }
     }
