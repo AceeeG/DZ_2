@@ -115,7 +115,7 @@ namespace Examples
             }
             else
             {
-                Console.WriteLine($"При штрих - коде: {ean13}\nКонтрольная цифра равна {10 - last_num}");
+                Console.WriteLine($"При штрих - коде: {ean13}\nКонтрольная цифра равна {10 - last_num}\n");
             }
             
             Console.WriteLine("Задание 8 - создаю 5 студентов\n");
