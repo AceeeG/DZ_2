@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Threading;
 
 namespace Examples
@@ -68,7 +69,7 @@ namespace Examples
             person.password =  Console.ReadLine();
             person.Print();
 
-            Console.WriteLine("Задание 3");
+            Console.WriteLine("Задание 3\nПока не знаю как");
             string s = Console.ReadLine();
 
 
@@ -84,7 +85,7 @@ namespace Examples
             Console.WriteLine("Введите стоимость отдыха:\n");
             int holiday_price = Convert.ToInt32(Console.ReadLine());
             double profit = holiday_price / (norm_price - sale_price);
-            Console.WriteLine($"Чтобы окупить отдых нужно столько бутылок: {Math.Ceiling(profit)}");
+            Console.WriteLine($"Чтобы окупить отдых нужно столько бутылок: {Math.Ceiling(profit) * -1}");
 
             Console.WriteLine("Задание 6 - повтор диаолога\nДля начала поздоровайтесь\n");
             Console.ReadLine();
@@ -101,17 +102,22 @@ namespace Examples
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Clear();
             
-            Console.WriteLine("Задание 7 - вычислить контрольную цифру штрихкода (EAN13).\n");
+            Console.WriteLine("Задание 7 - вычислить контрольную цифру штрихкода (EAN13).\nШтрих - код создаётся рандомно");
             Random rnd = new Random();
-
-            int num = rnd.Next(10), num1 = rnd.Next(10), num2 = rnd.Next(10), num3 = rnd.Next(10), num4 = rnd.Next(10), num5 = rnd.Next(10), num6 = rnd.Next(10), num7 = rnd.Next(10), num8 = rnd.Next(10), num9 = rnd.Next(10), num10 = rnd.Next(10), num11 = rnd.Next(10);
-            int pre_rez= ((num1 + num3 + num5 + num7 + num9 + num11) * 3) + (num + num2 + num4 + num6 + num8 + num10);
-            string str = Convert.ToString(pre_rez);
-            int n = 10 - (Convert.ToInt32(str[str.Length - 1]));
-            Console.WriteLine(n + 10);
-            Console.WriteLine($"Контрольная цифра: {n}");
+            int num1 = rnd.Next(10), num2 = rnd.Next(10), num3 = rnd.Next(10), num4 = rnd.Next(10), num5 = rnd.Next(10), num6 = rnd.Next(10), num7 = rnd.Next(10), num8 = rnd.Next(10), num9 = rnd.Next(10), num10 = rnd.Next(10), num11 = rnd.Next(10), num12 = rnd.Next(10), num13 = rnd.Next(10);
+            string ean13 = Convert.ToString(num1) + Convert.ToString(num2) + Convert.ToString(num3) + Convert.ToString(num4) + Convert.ToString(num5) + Convert.ToString(num6) + Convert.ToString(num7) + Convert.ToString(num8) + Convert.ToString(num9) + Convert.ToString(num10) + Convert.ToString(num11) + Convert.ToString(num12) + Convert.ToString(num13);
+            int sum = (num2 + num4 + num6 + num8 + num10 + num12) + ((num1 + num3 + num5 + num7 + num9 + num11 + num13) * 3);
+            string sum1 = Convert.ToString(sum);
+            int last_num = Convert.ToInt32(sum1.Substring(sum1.Length - 1));
+            if (last_num == 0)
+            {
+                Console.WriteLine($"При штрих - коде: {ean13}\nКонтрольная цифра равна {last_num}");
+            }
+            else
+            {
+                Console.WriteLine($"При штрих - коде: {ean13}\nКонтрольная цифра равна {10 - last_num}");
+            }
             
-
             Console.WriteLine("Задание 8 - создаю 5 студентов\n");
 
             Student student1 = new Student();
@@ -160,7 +166,7 @@ namespace Examples
                 $"{student3.name} {student3.surname} выпил {(student3.liter / liters) * 100} процентов\n" +
                 $"{student4.name} {student4.surname} выпил {(student4.liter / liters) * 100} процентов\n" +
                 $"{student5.name} {student5.surname} выпил {(student5.liter / liters) * 100} процентов\n");
-
+            
             Console.ReadKey();
         }
     }

@@ -6,12 +6,12 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Лабораторная 1\nЗадание 1.\nВведите ваше имя:");
+            Console.WriteLine("Лабораторная 2 главы\nУпражнение 2.1.\nВведите ваше имя:");
 
             string name = Console.ReadLine();
             Console.WriteLine($"\nПривет {name}, хорошего дня тебе\n");
 
-            Console.WriteLine("Задание 2.\nВведите 2 числа, а программа выдаст результат деления первого на второе.\nЕсли вводите целые значения, пишите через запятую.\n\nВведите 1 число: ");
+            Console.WriteLine("Упражнение 2.2.\nВведите 2 числа, а программа выдаст результат деления первого на второе.\nЕсли вводите целые значения, пишите через запятую.\n\nВведите 1 число: ");
 
             string num1 = Console.ReadLine();
             if (num1.Contains("."))
@@ -51,7 +51,7 @@ namespace Lab1
                 Console.WriteLine($"Результатом деления данных чисел будет {a / b}");
             }
 
-            Console.WriteLine("Задание 3.\nВведите строчный символ английского алфавита, а программа выведет следующий\n");
+            Console.WriteLine("Домашнее задание 2.1.\nВведите строчный символ английского алфавита, а программа выведет следующий\n");
             char[] alf = new[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
             string sym = Console.ReadLine();
@@ -79,7 +79,7 @@ namespace Lab1
             }
 
 
-            Console.WriteLine("Задание 4\nНайти корни квадратного уравнения\nВведите первый коэфицент:");
+            Console.WriteLine("Домашнее задание 2.2\nНайти корни квадратного уравнения\nВведите первый коэфицент:");
             double first = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Введите второй коэфицент:");
             double second = Convert.ToDouble(Console.ReadLine());

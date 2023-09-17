@@ -40,11 +40,11 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Лабораторная 2\nЗадание 1 - работа с перечислениями(enum)\n");
+            Console.WriteLine("Лабораторная 3 главы\nУпражнение 3.1 - работа с перечислениями(enum)\n");
             Bank bank_account = Bank.Savings;
             Console.WriteLine($"Тип вашего банковского счета {bank_account}\n");
 
-            Console.WriteLine("Задание 2 - работа со структурами\n");
+            Console.WriteLine("Упражнение 3.2 - работа со структурами\n");
             
             Client client = new Client();
             client.id = 1111222233334444;
@@ -52,7 +52,7 @@ namespace Lab2
             client.balance = 3200;
             client.Print();
 
-            Console.WriteLine("Задание 3\nИспользуем enum как тип данн\n");
+            Console.WriteLine("Домашнее задание 3.1\nИспользуем enum как тип данн\n");
             Worker worker = new Worker();
             worker.name = "Олег";
             worker.vuz = 0;
