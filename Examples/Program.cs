@@ -1,15 +1,13 @@
 ﻿using System;
-using System.CodeDom;
 using System.Threading;
-
 namespace Examples
 {
     enum Alchohol
     {
-        Алкаш,
-        Пьющий,
-        По_праздникам,
-        Трезвый
+        Drunkard,
+        Drinker,
+        Party_Drinker,
+        Sober
     }
     enum Color
     {
@@ -69,8 +67,21 @@ namespace Examples
             person.password =  Console.ReadLine();
             person.Print();
 
-            Console.WriteLine("Задание 3\nПока не знаю как");
-            string s = Console.ReadLine();
+            Console.WriteLine("Задание 3\nВведите вашу строку");
+            string txt = Console.ReadLine();
+            string answer = "";
+            for(int i = 0; i < txt.Length; i++)
+            {
+                if (txt[i] != txt.ToUpper()[i])
+                {
+                    answer += txt.ToUpper()[i];
+                }
+                else
+                {
+                    answer += txt.ToLower()[i];
+                }
+            }
+            Console.WriteLine($"Обработаная строка:\n{answer}");
 
 
             Console.WriteLine("Задание 4 - находим количество вхождений подстроки в строку\nВведите строку");
@@ -85,9 +96,13 @@ namespace Examples
             Console.WriteLine("Введите стоимость отдыха:\n");
             int holiday_price = Convert.ToInt32(Console.ReadLine());
             double profit = holiday_price / (norm_price - sale_price);
-            Console.WriteLine($"Чтобы окупить отдых нужно столько бутылок: {Math.Ceiling(profit) * -1}");
+            Console.WriteLine($"Чтобы окупить отдых нужно столько бутылок: {Math.Ceiling(profit)}");
 
             Console.WriteLine("Задание 6 - повтор диаолога\nДля начала поздоровайтесь\n");
+            Random random = new Random();
+            string[] color = {"Red", "Blue", "Green", "Yellow", "White", "Gray", "DarkRed", "DarkBlue", "DarkGreen", "DarkYellow", "DarkGray", };
+            string console_color = color[random.Next(color.Length)];
+            Console.WriteLine(console_color);
             Console.ReadLine();
             Console.WriteLine("Как тебя зовут?");
             string name = Console.ReadLine();
@@ -101,7 +116,10 @@ namespace Examples
             Thread.Sleep(1000);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.Clear();
-            
+            Thread.Sleep(1000);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
+
             Console.WriteLine("Задание 7 - вычислить контрольную цифру штрихкода (EAN13).\nШтрих - код создаётся рандомно");
             Random rnd = new Random();
             int num1 = rnd.Next(10), num2 = rnd.Next(10), num3 = rnd.Next(10), num4 = rnd.Next(10), num5 = rnd.Next(10), num6 = rnd.Next(10), num7 = rnd.Next(10), num8 = rnd.Next(10), num9 = rnd.Next(10), num10 = rnd.Next(10), num11 = rnd.Next(10), num12 = rnd.Next(10), num13 = rnd.Next(10);
@@ -124,7 +142,7 @@ namespace Examples
             student1.surname = "Иванов";
             student1.name = "Ваня";
             student1.id = 1;
-            student1.alchohol = Alchohol.Алкаш;
+            student1.alchohol = Alchohol.Drunkard;
             student1.liter = 2;
             student1.Counter();
 
@@ -132,7 +150,7 @@ namespace Examples
             student2.surname = "Саблин";
             student2.name = "Жорик";
             student2.id = 2;
-            student2.alchohol = Alchohol.Пьющий;
+            student2.alchohol = Alchohol.Drinker;
             student2.liter = 1;
             student2.Counter();
 
@@ -140,7 +158,7 @@ namespace Examples
             student3.surname = "Белый";
             student3.name = "Саша";
             student3.id = 3;
-            student3.alchohol = Alchohol.Пьющий;
+            student3.alchohol = Alchohol.Drinker;
             student3.liter = 1.5;
             student3.Counter();
 
@@ -148,7 +166,7 @@ namespace Examples
             student4.surname = "Ревва";
             student4.name = "Алекс";
             student4.id = 4;
-            student4.alchohol = Alchohol.Трезвый;
+            student4.alchohol = Alchohol.Sober;
             student4.liter = 0;
             student4.Counter();
 
@@ -156,7 +174,7 @@ namespace Examples
             student5.surname = "Спортик";
             student5.name = "Серега";
             student5.id = 5;
-            student5.alchohol = Alchohol.По_праздникам;
+            student5.alchohol = Alchohol.Party_Drinker;
             student5.liter = 0.5;
             student5.Counter();
 
