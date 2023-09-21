@@ -183,7 +183,8 @@ namespace Examples
                 $"{student3.name} {student3.surname} выпил {(student3.liter / liters) * 100} процентов\n" +
                 $"{student4.name} {student4.surname} выпил {(student4.liter / liters) * 100} процентов\n" +
                 $"{student5.name} {student5.surname} выпил {(student5.liter / liters) * 100} процентов\n");
-            
+
+            Console.WriteLine("Для завершения нажмите любую клавишу");
             Console.ReadKey();
         }
     }
