@@ -2,6 +2,7 @@
 using System.Threading;
 namespace Examples
 {
+    
     enum Alchohol
     {
         Drunkard,
@@ -9,14 +10,6 @@ namespace Examples
         Party_Drinker,
         Sober
     }
-    enum Color
-    {
-        White,
-        Red,
-        Green,
-        Blue,
-        Yellow,
-    }  
     struct Person
     {
         public string name;
@@ -48,14 +41,19 @@ namespace Examples
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Задания с 1 - 8\nЗадание 1 - работа с выводом\n\nbyte - Максимальное значение: 255, Минимальное: 0\n" +
-                "sbyte - Максимальное значение: 127, Минимальное: -128\nshort - Максимальное значение: 32767, Минимальное: -32768\n" +
-                "ushort - Максимальное значение: 65535, Минимальное: 0\nint - Максимальное значение: 2147483647, Минимальное: -2147483648\n" +
-                "uint - Максимальное значение: 4294967295, Минимальное: 0\nlong - Максимальное значение: 9223372036854775807, Минимальное: -922337203685477808\n" +
-                "ulong - Максимальное значение: 18446774073709551615, Минимальное: 0\nfloat - Максимальное значение: 3,402823e38, Минимальное: -3,402823e38\n" +
-                "double - Максимальное значение: 1,797693e308, Минимальное: -1,797693e308\ndecimal - Максимальное значение: 7,992816e28, Минимальное: -7,992816e28\n" +
-                "\nЗадание 2 - работа со struct\n");
-            
+            Console.WriteLine($"Задание 1\nbyte - максимальное значение: {byte.MaxValue} - минимальное значение: {byte.MinValue} \n" +
+                              $"sbyte - максимальное значение: {sbyte.MaxValue} - минимальное значение: {sbyte.MinValue} \n" +
+                              $"short - максимальное значение: {short.MaxValue} - минимальное значение: {short.MinValue} \n" +
+                              $"ushort - максимальное значение: {ushort.MaxValue} - минимальное значение: {ushort.MinValue} \n" +
+                              $"int - максимальное значение: {int.MaxValue} - минимальное значение: {int.MinValue} \n" +
+                              $"uint - максимальное значение: {uint.MaxValue} - минимальное значение: {uint.MinValue} \n" +
+                              $"long - максимальное значение: {long.MaxValue} - минимальное значение: {long.MinValue} \n" +
+                              $"ulong - максимальное значение: {ulong.MaxValue} - минимальное значение: {ulong.MinValue} \n" +
+                              $"float - максимальное значение: {float.MaxValue} - минимальное значение: {float.MinValue} \n" +
+                              $"double - максимальное значение: {double.MaxValue} - минимальное значение: {double.MinValue} \n" +
+                              $"decimal - максимальное значение: {decimal.MaxValue} - минимальное значение: {decimal.MinValue} \n");
+
+
             Person person = new Person();
             Console.WriteLine("Введите ваше имя: ");
             person.name = Console.ReadLine();
@@ -99,10 +97,11 @@ namespace Examples
             Console.WriteLine($"Чтобы окупить отдых нужно столько бутылок: {Math.Ceiling(profit)}");
 
             Console.WriteLine("Задание 6 - повтор диаолога\nДля начала поздоровайтесь\n");
-            Random random = new Random();
-            string[] color = {"Red", "Blue", "Green", "Yellow", "White", "Gray", "DarkRed", "DarkBlue", "DarkGreen", "DarkYellow", "DarkGray", };
-            string console_color = color[random.Next(color.Length)];
-            Console.WriteLine(console_color);
+            Random rand = new Random();
+            System.ConsoleColor[] color = {ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.Green, ConsoleColor.Yellow, ConsoleColor.White, ConsoleColor.Gray, ConsoleColor.DarkRed, ConsoleColor.DarkBlue, ConsoleColor.DarkGreen, ConsoleColor.DarkYellow, ConsoleColor.DarkGray};
+
+            System.ConsoleColor console_color = color[rand.Next(12)];
+
             Console.ReadLine();
             Console.WriteLine("Как тебя зовут?");
             string name = Console.ReadLine();
@@ -114,7 +113,7 @@ namespace Examples
             Thread.Sleep(5000);
             Console.WriteLine("Но могу показать.");
             Thread.Sleep(1000);
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = console_color;
             Console.Clear();
             Thread.Sleep(1000);
             Console.BackgroundColor = ConsoleColor.Black;

@@ -51,10 +51,10 @@ namespace Lab1
                 Console.WriteLine($"Результатом деления данных чисел будет {a / b}");
             }
 
-            Console.WriteLine("Домашнее задание 2.1.\nВведите строчный символ английского алфавита, а программа выведет следующий\n");
+            Console.WriteLine("Домашнее задание 2.1.\nВведите символ английского алфавита, а программа выведет следующий\n");
             char[] alf = new[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
-            string sym = Console.ReadLine();
+            string sym = Console.ReadLine().ToLower();
             a = (char)sym[0];
             char z = 'z';
             if (a == z)
@@ -73,7 +73,7 @@ namespace Lab1
             {
                 if (a != (alf[j]))
                 {
-                    Console.WriteLine("Вы ввели не строчную букву английского алфавита");
+                    Console.WriteLine("Вы ввели не букву английского алфавита");
                     break;
                 }
             }
